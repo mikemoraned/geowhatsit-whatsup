@@ -12,6 +12,7 @@
 
 .point {
   stroke: #f00;
+  fill: #700;
 }
 
 .land {
@@ -63,8 +64,8 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-  d3.json("http://localhost:5000/counts.json", function(error, data) {
-    console.dir(data);
+  d3.json("http://geowhatsit-server.herokuapp.com/counts.json", function(error, data) {
+//    console.dir(data);
     svg.selectAll(".point")
             .data(data.counts)
             .enter().append("circle")
