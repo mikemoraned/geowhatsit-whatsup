@@ -1,146 +1,66 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!-- saved from url=(0040)http://bl.ocks.org/mbostock/raw/3757132/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<style>
 
-<head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Foundation 4</title>
+.graticule {
+  fill: none;
+  stroke: #777;
+  stroke-opacity: .5;
+  stroke-width: .5px;
+}
 
-  
-  <link rel="stylesheet" href="css/foundation.css">
-  
+.land {
+  fill: #222;
+}
 
-  <script src="js/vendor/custom.modernizr.js"></script>
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px;
+}
 
-</head>
-<body>
+</style>
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head><body>
+<script src="./index_files/d3.v3.min.js"></script>
+<script src="./index_files/topojson.v1.min.js"></script>
+<script>
 
-	<div class="row">
-		<div class="large-12 columns">
-			<h2>Welcome to Foundation</h2>
-			<p>This is version 4.3.1.</p>
-			<hr />
-		</div>
-	</div>
+var width = 960,
+    height = 960;
 
-	<div class="row">
-		<div class="large-8 columns">
-			<h3>The Grid</h3>
+var projection = d3.geo.mercator()
+    .scale((width + 1) / 2 / Math.PI)
+    .translate([width / 2, height / 2])
+    .precision(.1);
 
-			<!-- Grid Example -->
-			<div class="row">
-				<div class="large-12 columns">
-					<div class="panel">
-						<p>This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-6 columns">
-					<div class="panel">
-						<p>Six columns</p>
-					</div>
-				</div>
-				<div class="large-6 columns">
-					<div class="panel">
-						<p>Six columns</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-4 columns">
-					<div class="panel">
-						<p>Four columns</p>
-					</div>
-				</div>
-				<div class="large-4 columns">
-					<div class="panel">
-						<p>Four columns</p>
-					</div>
-				</div>
-				<div class="large-4 columns">
-					<div class="panel">
-						<p>Four columns</p>
-					</div>
-				</div>
-			</div>
+var path = d3.geo.path()
+    .projection(projection);
 
-			<h3>Buttons</h3>
+var graticule = d3.geo.graticule();
 
-      <div class="row">
-        <div class="large-6 columns">
-          <p><a href="#" class="small button">Small Button</a></p>
-          <p><a href="#" class="button">Medium Button</a></p>
-          <p><a href="#" class="large button">Large Button</a></p>
-        </div>
-        <div class="large-6 columns">
-          <p><a href="#" class="small alert button">Small Alert Button</a></p>
-          <p><a href="#" class="success button">Medium Success Button</a></p>
-          <p><a href="#" class="large secondary button">Large Secondary Button</a></p>
-        </div>
-      </div>
-		</div>
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
-		<div class="large-4 columns">
-			<h4>Getting Started</h4>
-			<p>We're stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
+svg.append("path")
+    .datum(graticule)
+    .attr("class", "graticule")
+    .attr("d", path);
 
-			<h4>Other Resources</h4>
-			<p>Once you've exhausted the fun in this document, you should check out:</p>
-			<ul class="disc">
-				<li><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</li>
-				<li><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</li>
-				<li><a href="http://twitter.com/foundationzurb">@foundationzurb</a><br />Ping us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).</li>
-			</ul>
-		</div>
-	</div>
+d3.json("world-50m.json", function(error, world) {
+  svg.insert("path", ".graticule")
+      .datum(topojson.feature(world, world.objects.land))
+      .attr("class", "land")
+      .attr("d", path);
 
-  <script>
-  document.write('<script src=' +
-  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-  '.js><\/script>')
-  </script>
-  
-  <script src="js/foundation.min.js"></script>
-  <!--
-  
-  <script src="js/foundation/foundation.js"></script>
-  
-  <script src="js/foundation/foundation.alerts.js"></script>
-  
-  <script src="js/foundation/foundation.clearing.js"></script>
-  
-  <script src="js/foundation/foundation.cookie.js"></script>
-  
-  <script src="js/foundation/foundation.dropdown.js"></script>
-  
-  <script src="js/foundation/foundation.forms.js"></script>
-  
-  <script src="js/foundation/foundation.joyride.js"></script>
-  
-  <script src="js/foundation/foundation.magellan.js"></script>
-  
-  <script src="js/foundation/foundation.orbit.js"></script>
-  
-  <script src="js/foundation/foundation.reveal.js"></script>
-  
-  <script src="js/foundation/foundation.section.js"></script>
-  
-  <script src="js/foundation/foundation.tooltips.js"></script>
-  
-  <script src="js/foundation/foundation.topbar.js"></script>
-  
-  <script src="js/foundation/foundation.interchange.js"></script>
-  
-  <script src="js/foundation/foundation.placeholder.js"></script>
-  
-  <script src="js/foundation/foundation.abide.js"></script>
-  
-  -->
-  
-  <script>
-    $(document).foundation();
-  </script>
-</body>
-</html>
+  svg.insert("path", ".graticule")
+      .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+      .attr("class", "boundary")
+      .attr("d", path);
+});
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
+</body></html>
