@@ -5,6 +5,9 @@
     <ignored path="geowhatsit-whatsup.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377036677862" ignored="false" />
+    <file path="/index.html" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377039083915" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377038292978" ignored="false" />
+    <file path="/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377038269777" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +30,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="66" selection-start="42" selection-end="82" vertical-scroll-proportion="0.014910537">
+            <state line="75" column="75" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.8359841">
               <folding />
             </state>
           </provider>
@@ -224,7 +227,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="66" selection-start="42" selection-end="82" vertical-scroll-proportion="0.014910537">
+        <state line="75" column="75" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.8359841">
           <folding />
         </state>
       </provider>
