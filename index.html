@@ -12,7 +12,7 @@
 
 .point {
   stroke: #f00;
-  fill: #700;
+  /*fill: #700;*/
 }
 
 .land {
@@ -64,12 +64,16 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-  d3.json("http://geowhatsit-server.herokuapp.com/counts.json", function(error, data) {
-//    console.dir(data);
+//  d3.json("http://geowhatsit-server.herokuapp.com/counts.json", function(error, data) {
+  d3.json("http://localhost:5000/counts/grouped-by-geohash/2.json", function(error, data) {
+    var extent = d3.extent(data.counts, function(d) {return d.count; });
+    console.dir(extent);
+    var color = d3.scale.linear().domain(extent).range(['black', 'red']);
     svg.selectAll(".point")
             .data(data.counts)
             .enter().append("circle")
             .attr("class", "point")
+            .style("fill", function(d) { return color(d.count); })
             .attr("cx", function(d) {
                 return projection([d.lat_lon.longitude, d.lat_lon.latitude])[0];
             })
