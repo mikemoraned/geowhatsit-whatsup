@@ -10,17 +10,11 @@
   stroke-width: .5px;
 }
 
-<<<<<<< HEAD
-.point {
-  stroke: #f00;
-  fill: #700;
-=======
 .area {
   stroke: #fff;
   stroke-opacity: 0.3;
   opacity: 0.9;
   /*fill: #700;*/
->>>>>>> gh-pages
 }
 
 .land {
@@ -72,21 +66,6 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-<<<<<<< HEAD
-  d3.json("http://geowhatsit-server.herokuapp.com/counts.json", function(error, data) {
-//    console.dir(data);
-    svg.selectAll(".point")
-            .data(data.counts)
-            .enter().append("circle")
-            .attr("class", "point")
-            .attr("cx", function(d) {
-                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[0];
-            })
-            .attr("cy", function(d) {
-                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[1];
-            })
-            .attr("r", 8);
-=======
 //  d3.json("http://localhost:5000/counts/grouped-by-geohash/precision-2.json", function(error, data) {
   d3.json("http://geowhatsit-server.herokuapp.com/counts/grouped-by-geohash/precision-3.json", function(error, data) {
     var extent = d3.extent(data.counts, function(d) {return d.count; });
@@ -118,7 +97,6 @@ d3.json("world-50m.json", function(error, world) {
 //                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[1];
 //            })
 //            .attr("r", 8);
->>>>>>> gh-pages
   });
 });
 

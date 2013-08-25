@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" name="Default" comment="" />
-    <ignored path="geowhatsit-whatsup.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377036677862" ignored="false" />
-    <file path="/index.html" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377041086102" ignored="false" />
-    <file path="$PROJECT_DIR$/../geowhatsit-server/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377041023581" ignored="false" />
-    <file path="/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377040803530" ignored="false" />
-=======
     <list default="true" readonly="true" id="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" name="Default" comment="" />
     <ignored path="geowhatsit-whatsup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +15,6 @@
     <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/node-redis/index.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377215137819" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/node-redis/utils.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377215137819" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/node-redis/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377215137819" ignored="false" />
->>>>>>> gh-pages
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +37,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state line="68" column="6" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.65705764">
-=======
-            <state line="15" column="14" selection-start="349" selection-end="349" vertical-scroll-proportion="0.22365806">
->>>>>>> gh-pages
+            <state line="105" column="14" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.9701789">
               <folding />
             </state>
           </provider>
@@ -64,8 +50,6 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-<<<<<<< HEAD
-=======
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -74,7 +58,6 @@
       <MyDateState />
     </option>
   </component>
->>>>>>> gh-pages
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -88,11 +71,7 @@
     <option name="width" value="1916" />
     <option name="height" value="1178" />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-=======
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
->>>>>>> gh-pages
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -118,10 +97,7 @@
       <sortByType />
     </navigator>
     <panes>
-<<<<<<< HEAD
-=======
       <pane id="Scope" />
->>>>>>> gh-pages
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -142,24 +118,14 @@
           </PATH>
         </subPane>
       </pane>
-<<<<<<< HEAD
-      <pane id="Scope" />
-=======
->>>>>>> gh-pages
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-<<<<<<< HEAD
-    <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-=======
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
->>>>>>> gh-pages
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -182,10 +148,7 @@
     <option name="IGNORE_EXTERNALS" value="false" />
     <configuration useDefault="true">$USER_HOME$/.subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
-<<<<<<< HEAD
-=======
     <supportedVersion>125</supportedVersion>
->>>>>>> gh-pages
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -199,28 +162,11 @@
     <frame x="4" y="22" width="1916" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
-<<<<<<< HEAD
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-=======
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
->>>>>>> gh-pages
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986793" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-=======
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -232,7 +178,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
->>>>>>> gh-pages
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -298,9 +243,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="68" column="6" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.65705764">
-=======
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -308,8 +250,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="349" selection-end="349" vertical-scroll-proportion="0.22365806">
->>>>>>> gh-pages
+        <state line="105" column="14" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.9701789">
           <folding />
         </state>
       </provider>
