@@ -10,8 +10,10 @@
   stroke-width: .5px;
 }
 
-.point {
-  stroke: #f00;
+.area {
+  stroke: #fff;
+  stroke-opacity: 0.3;
+  opacity: 0.9;
   /*fill: #700;*/
 }
 
@@ -64,23 +66,37 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-//  d3.json("http://geowhatsit-server.herokuapp.com/counts.json", function(error, data) {
-  d3.json("http://localhost:5000/counts/grouped-by-geohash/2.json", function(error, data) {
+//  d3.json("http://localhost:5000/counts/grouped-by-geohash/precision-2.json", function(error, data) {
+  d3.json("http://geowhatsit-server.herokuapp.com/counts/grouped-by-geohash/precision-3.json", function(error, data) {
     var extent = d3.extent(data.counts, function(d) {return d.count; });
     console.dir(extent);
-    var color = d3.scale.linear().domain(extent).range(['black', 'red']);
+    var color = d3.scale.log().domain(extent).range(['white', 'red']);
+    var errorCircle = function(latLon) {
+        var x = projection([latLon.longitude, latLon.latitude])[0];
+        var y = projection([latLon.longitude, latLon.latitude])[1];
+        var extentX = projection([latLon.longitude + latLon.error.longitude, latLon.latitude])[0] - x;
+        var extentY = projection([latLon.longitude, latLon.latitude + latLon.error.latitude])[1] - y;
+        return {
+            'cx' : x,
+            'cy' : y,
+            'r' : Math.max(extentX, extentY)
+        };
+    }
     svg.selectAll(".point")
             .data(data.counts)
             .enter().append("circle")
-            .attr("class", "point")
+            .attr("class", "area")
             .style("fill", function(d) { return color(d.count); })
-            .attr("cx", function(d) {
-                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[0];
-            })
-            .attr("cy", function(d) {
-                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[1];
-            })
-            .attr("r", 8);
+            .attr("cx", function(d) { return errorCircle(d.lat_lon).cx; })
+            .attr("cy", function(d) { return errorCircle(d.lat_lon).cy; })
+            .attr("r", function(d) { return errorCircle(d.lat_lon).r; });
+//            .attr("cx", function(d) {
+//                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[0];
+//            })
+//            .attr("cy", function(d) {
+//                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[1];
+//            })
+//            .attr("r", 8);
   });
 });
 
