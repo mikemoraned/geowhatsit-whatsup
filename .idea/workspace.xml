@@ -1,20 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" name="Default" comment="" />
+    <list default="true" id="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="geowhatsit-whatsup.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377209019690" ignored="false" />
+    <file path="/Dummy.txt" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377814082546" ignored="false" />
     <file path="/index.html" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377389932599" ignored="false" />
-    <file path="$PROJECT_DIR$/../geowhatsit-server/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377389602710" ignored="false" />
-    <file path="/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377386772929" ignored="false" />
-    <file path="$PROJECT_DIR$/../geowhatsit-server/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377389603887" ignored="false" />
-    <file path="$PROJECT_DIR$/../geowhatsit-server/web.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377389603887" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819599416" ignored="false" />
+    <file path="/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812294882" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819542441" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/web.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819600752" ignored="false" />
     <file path="/fragment.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377211743723" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/node-redis/parser.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377215137819" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/node-redis/index.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377215137819" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/node-redis/utils.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377215137819" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/node-redis/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377215137819" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/natural/node_modules/sylvester/lib/node-sylvester/line.segment.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377645217257" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/natural/node_modules/sylvester/lib/node-sylvester/sylvester.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377645217258" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/natural/node_modules/sylvester/lib/node-sylvester/linkedlist.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377645217258" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/node_modules/natural/lib/natural/phonetics/dm_soundex.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377645217258" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/LatLon.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377811291950" ignored="false" />
+    <file path="/LatLon.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377811109958" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/LatLon.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377811292738" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812733571" ignored="false" />
+    <file path="/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377811929018" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/TweetCountsFactory.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812727940" ignored="false" />
+    <file path="/TweetCountsFactory.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819582089" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/TweetTokenizer.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812378142" ignored="false" />
+    <file path="/TweetTokenizer.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377818488814" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/Stream.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812324800" ignored="false" />
+    <file path="/Stream.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812268467" ignored="false" />
+    <file path="/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377813609707" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819593037" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/Stream.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377817579764" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/TweetCountsFactory.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819588369" ignored="false" />
+    <file path="/a.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377814150497" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/Foop.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377814256443" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/LatLon.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377817579764" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/TweetTokenizer.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819542441" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/test/unit/LatLonTest.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377817578938" ignored="false" />
+    <file path="/LatLonTest.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377816981583" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/test/unit/LatLonTest.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377817579764" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/test/unit/TweetTokenizerTest.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819542441" ignored="false" />
+    <file path="/TweetTokenizerTest.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377818864365" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/test/unit/TweetTokenizerTest.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819543158" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +69,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="14" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.9701789">
+            <state line="69" column="87" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.37574553">
               <folding />
             </state>
           </provider>
@@ -97,7 +129,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -118,6 +149,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -126,6 +158,17 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PublishConfig">
+    <servers>
+      <server id="0dfb424d-cf63-4627-85b3-252b3e6e03e6">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -250,7 +293,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="14" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.9701789">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="87" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.37574553">
           <folding />
         </state>
       </provider>
