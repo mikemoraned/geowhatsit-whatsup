@@ -66,7 +66,8 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-  var base = "http://localhost:5000"
+//  var base = "http://localhost:5000";
+  var base = "http://geowhatsit-server.herokuapp.com";
 
   d3.json(base + "/regions/", function(error, regions) {
     var extent = d3.extent(regions, function(d) {return d.summary.tweets; });
