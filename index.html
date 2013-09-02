@@ -66,30 +66,45 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-//  d3.json("http://localhost:5000/counts/grouped-by-geohash/precision-3.json", function(error, data) {
-  d3.json("http://geowhatsit-server.herokuapp.com/counts/grouped-by-geohash/precision-2.json", function(error, data) {
-    var extent = d3.extent(data.counts, function(d) {return d.count; });
+  d3.json("http://localhost:5000/regions/", function(error, regions) {
+//  d3.json("http://geowhatsit-server.herokuapp.com/counts/grouped-by-geohash/precision-2.json", function(error, data) {
+    var extent = d3.extent(regions, function(d) {return d.summary.tweets; });
     console.dir(extent);
+    console.dir(regions);
     var color = d3.scale.log().domain(extent).range(['white', 'red']);
-    var errorCircle = function(latLon) {
-        var x = projection([latLon.longitude, latLon.latitude])[0];
-        var y = projection([latLon.longitude, latLon.latitude])[1];
-        var extentX = projection([latLon.longitude + latLon.error.longitude, latLon.latitude])[0] - x;
-        var extentY = projection([latLon.longitude, latLon.latitude + latLon.error.latitude])[1] - y;
+//    var errorCircle = function(latLon) {
+//        var x = projection([latLon.longitude, latLon.latitude])[0];
+//        var y = projection([latLon.longitude, latLon.latitude])[1];
+//        var extentX = projection([latLon.longitude + latLon.error.longitude, latLon.latitude])[0] - x;
+//        var extentY = projection([latLon.longitude, latLon.latitude + latLon.error.latitude])[1] - y;
+//        return {
+//            'cx' : x,
+//            'cy' : y,
+//            'r' : Math.max(extentX, extentY)
+//        };
+//    }
+    var rectAttr = function(d) {
+        var topLeft = projection([d.geo.bbox.topLeft.longitude, d.geo.bbox.topLeft.latitude]);
+        var bottomRight = projection([d.geo.bbox.bottomRight.longitude, d.geo.bbox.bottomRight.latitude]);
         return {
-            'cx' : x,
-            'cy' : y,
-            'r' : Math.max(extentX, extentY)
-        };
+            x: topLeft[0],
+            y: topLeft[1],
+            width: bottomRight[0] - topLeft[0],
+            height: bottomRight[1] - topLeft[1]
+        }
     }
     svg.selectAll(".point")
-            .data(data.counts)
-            .enter().append("circle")
+            .data(regions)
+            .enter().append("rect")
             .attr("class", "area")
-            .style("fill", function(d) { return color(d.count); })
-            .attr("cx", function(d) { return errorCircle(d.lat_lon).cx; })
-            .attr("cy", function(d) { return errorCircle(d.lat_lon).cy; })
-            .attr("r", function(d) { return errorCircle(d.lat_lon).r; });
+            .style("fill", function(d) { return color(d.summary.tweets); })
+//            .attr("cx", function(d) { return errorCircle(d.lat_lon).cx; })
+//            .attr("cy", function(d) { return errorCircle(d.lat_lon).cy; })
+//            .attr("r", function(d) { return errorCircle(d.lat_lon).r; });
+            .attr("x", function(d) { return rectAttr(d).x; })
+            .attr("y", function(d) { return rectAttr(d).y; })
+            .attr("width", function(d) { return rectAttr(d).width; })
+            .attr("height", function(d) { return rectAttr(d).height; });
 //            .attr("cx", function(d) {
 //                return projection([d.lat_lon.longitude, d.lat_lon.latitude])[0];
 //            })
