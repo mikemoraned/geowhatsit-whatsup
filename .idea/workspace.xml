@@ -8,7 +8,7 @@
     <ignored path="geowhatsit-whatsup.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378036819031" ignored="false" />
-    <file path="/index.html" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378157229317" ignored="false" />
+    <file path="/index.html" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378160764844" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378156408730" ignored="false" />
     <file path="/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378156245700" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819542441" ignored="false" />
@@ -92,7 +92,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="72" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.806163">
+            <state line="69" column="84" selection-start="1658" selection-end="1658" vertical-scroll-proportion="0.4632207">
               <folding />
             </state>
           </provider>
@@ -323,7 +323,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="72" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.806163">
+        <state line="69" column="84" selection-start="1658" selection-end="1658" vertical-scroll-proportion="0.4632207">
           <folding />
         </state>
       </provider>

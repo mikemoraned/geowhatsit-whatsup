@@ -66,8 +66,8 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-  d3.json("http://localhost:5000/regions/", function(error, regions) {
-//  d3.json("http://geowhatsit-server.herokuapp.com/counts/grouped-by-geohash/precision-2.json", function(error, data) {
+//  d3.json("http://localhost:5000/regions/", function(error, regions) {
+  d3.json("http://geowhatsit-server.herokuapp.com/regions/", function(error, regions) {
     var extent = d3.extent(regions, function(d) {return d.summary.tweets; });
     console.dir(extent);
     console.dir(regions);
