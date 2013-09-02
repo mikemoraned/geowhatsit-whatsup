@@ -66,8 +66,8 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-//  d3.json("http://localhost:5000/regions/", function(error, regions) {
-  d3.json("http://geowhatsit-server.herokuapp.com/regions/", function(error, regions) {
+  d3.json("http://localhost:5000/regions/", function(error, regions) {
+//  d3.json("http://geowhatsit-server.herokuapp.com/regions/", function(error, regions) {
     var extent = d3.extent(regions, function(d) {return d.summary.tweets; });
     console.dir(extent);
     console.dir(regions);
@@ -90,7 +90,8 @@ d3.json("world-50m.json", function(error, world) {
             .attr("x", function(d) { return rectAttr(d).x; })
             .attr("y", function(d) { return rectAttr(d).y; })
             .attr("width", function(d) { return rectAttr(d).width; })
-            .attr("height", function(d) { return rectAttr(d).height; });
+            .attr("height", function(d) { return rectAttr(d).height; })
+            .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; })
   });
 });
 
