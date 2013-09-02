@@ -66,8 +66,9 @@ d3.json("world-50m.json", function(error, world) {
       .attr("class", "boundary")
       .attr("d", path);
 
-  d3.json("http://localhost:5000/regions/", function(error, regions) {
-//  d3.json("http://geowhatsit-server.herokuapp.com/regions/", function(error, regions) {
+  var base = "http://localhost:5000"
+
+  d3.json(base + "/regions/", function(error, regions) {
     var extent = d3.extent(regions, function(d) {return d.summary.tweets; });
     console.dir(extent);
     console.dir(regions);
@@ -84,7 +85,10 @@ d3.json("world-50m.json", function(error, world) {
     }
     svg.selectAll(".point")
             .data(regions)
-            .enter().append("rect")
+            .enter()
+            .append("a")
+            .attr("xlink:href", function(d) { return base + d.ngrams.href; })
+            .append("rect")
             .attr("class", "area")
             .style("fill", function(d) { return color(d.summary.tweets); })
             .attr("x", function(d) { return rectAttr(d).x; })

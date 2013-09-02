@@ -8,9 +8,9 @@
     <ignored path="geowhatsit-whatsup.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378036819031" ignored="false" />
-    <file path="/index.html" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378161926670" ignored="false" />
-    <file path="$PROJECT_DIR$/../geowhatsit-server/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378156408730" ignored="false" />
-    <file path="/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378156245700" ignored="false" />
+    <file path="/index.html" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378163969714" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378162693094" ignored="false" />
+    <file path="/web.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378162639602" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377819542441" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/web.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377988824470" ignored="false" />
     <file path="/fragment.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377211743723" ignored="false" />
@@ -26,7 +26,7 @@
     <file path="/LatLon.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378151540754" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/LatLon.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377811292738" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812733571" ignored="false" />
-    <file path="/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378156377150" ignored="false" />
+    <file path="/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378163358096" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/TweetCountsFactory.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812727940" ignored="false" />
     <file path="/TweetCountsFactory.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377846532352" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/TweetTokenizer.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812378142" ignored="false" />
@@ -34,7 +34,7 @@
     <file path="$PROJECT_DIR$/../geowhatsit-server/Stream.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812324800" ignored="false" />
     <file path="/Stream.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377812268467" ignored="false" />
     <file path="/package.json" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377813609707" ignored="false" />
-    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378156383127" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/RedisTweetCounts.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378163409664" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/lib/Stream.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377817579764" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/lib/TweetCountsFactory.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377846775802" ignored="false" />
     <file path="/a.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377814150497" ignored="false" />
@@ -51,7 +51,7 @@
     <file path="/Graphite.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378037542996" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/lib/MetricCollector.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378149128873" ignored="false" />
     <file path="/MetricCollector.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378040243170" ignored="false" />
-    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/RedisTweetCounts.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378156326147" ignored="false" />
+    <file path="$PROJECT_DIR$/../geowhatsit-server/lib/RedisTweetCounts.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378163458153" ignored="false" />
     <file path="/RedisTweetCounts.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1377989608884" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/lib/Graphite.js" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378153031755" ignored="false" />
     <file path="$PROJECT_DIR$/../geowhatsit-server/worker.coffee" changelist="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" time="1378149128873" ignored="false" />
@@ -92,7 +92,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="98" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.82107353">
+            <state line="96" column="71" selection-start="2797" selection-end="2797" vertical-scroll-proportion="0.8807157">
               <folding />
             </state>
           </provider>
@@ -323,7 +323,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="98" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.82107353">
+        <state line="96" column="71" selection-start="2797" selection-end="2797" vertical-scroll-proportion="0.8807157">
           <folding />
         </state>
       </provider>
