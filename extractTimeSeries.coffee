@@ -16,8 +16,10 @@ partition = (partitionSize) ->
 
 batchUp = partition(100)
 
-regionFilePattern = /.+(\d+)\/regions$/
+regionFilePattern = /.+\/(\d+)\/regions$/
 
+position = {}
+timeSeries = {}
 FS.listTree(argv.dir).then((entries) =>
   regionFileNames =
     _.filter(entries, (e) => regionFilePattern.test(e))
@@ -28,7 +30,11 @@ FS.listTree(argv.dir).then((entries) =>
   reads = (fileNames) =>
     _.map(fileNames, (f) =>
         FS.read(f).then((content) =>
-          { name: f, content: content }
+          try
+            { timestamp: parseInt(f.match(regionFilePattern)[1]), content: JSON.parse(content) }
+          catch e
+            console.warn("Ignoring #{f}: #{e}")
+            null
         )
     )
 
@@ -38,8 +44,17 @@ FS.listTree(argv.dir).then((entries) =>
       console.log("Doing batch #{index} of length #{batch.length}")
       Q.all(reads(batch))
       .then(
-        (read) =>
-#          console.dir(_.pluck(read, "name"))
+        (filesRead) =>
+          for fileRead in filesRead
+#            console.dir(fileRead)
+            if fileRead?
+#              console.log(fileRead.timestamp)
+              for entry in fileRead.content
+#                console.dir(entry)
+                position[entry.name] = entry.geo
+                if not timeSeries[entry.name]?
+                  timeSeries[entry.name] = {}
+                timeSeries[entry.name][fileRead.timestamp] = entry.summary.tweets
           dispatchBatch(index + 1, batches)
         ,
         (error) =>
@@ -47,4 +62,7 @@ FS.listTree(argv.dir).then((entries) =>
         )
 
   dispatchBatch(0, batches)
+).then(() =>
+  console.dir(position)
+  console.dir(timeSeries)
 )

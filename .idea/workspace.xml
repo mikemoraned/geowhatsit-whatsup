@@ -39,7 +39,7 @@
       <file leaf-file-name="extractTimeSeries.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/extractTimeSeries.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="36" selection-start="871" selection-end="871" vertical-scroll-proportion="0.48066297" vertical-offset="0" max-vertical-offset="905">
+            <state line="56" column="47" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.7016575" vertical-offset="205" max-vertical-offset="1110">
               <folding />
             </state>
           </provider>
@@ -284,7 +284,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extractTimeSeries.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="36" selection-start="871" selection-end="871" vertical-scroll-proportion="0.48066297" vertical-offset="0" max-vertical-offset="905">
+        <state line="56" column="47" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.7016575" vertical-offset="205" max-vertical-offset="1110">
           <folding />
         </state>
       </provider>
