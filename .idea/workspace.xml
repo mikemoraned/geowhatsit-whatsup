@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="818df1f0-5e82-4e6d-9aed-fd3fa5d68dae" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/timeSeries.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extractTimeSeries.coffee" afterPath="$PROJECT_DIR$/extractTimeSeries.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extractTimeSeries.js" afterPath="$PROJECT_DIR$/extractTimeSeries.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extractTimeSeries.map" afterPath="$PROJECT_DIR$/extractTimeSeries.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geowhatsit-whatsup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +38,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extractTimeSeries.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="extractTimeSeries.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extractTimeSeries.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="81" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.48618785" vertical-offset="400" max-vertical-offset="1305">
+            <state line="87" column="16" selection-start="2609" selection-end="2609" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1590">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="timeSeries.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/timeSeries.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="93" column="25" selection-start="2574" selection-end="2574" vertical-scroll-proportion="0.6594779" vertical-offset="814" max-vertical-offset="1695">
               <folding />
             </state>
           </provider>
@@ -65,6 +76,7 @@
       <list>
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/extractTimeSeries.coffee" />
+        <option value="$PROJECT_DIR$/timeSeries.html" />
       </list>
     </option>
   </component>
@@ -130,6 +142,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -284,7 +301,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extractTimeSeries.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="81" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.48618785" vertical-offset="400" max-vertical-offset="1305">
+        <state line="87" column="16" selection-start="2609" selection-end="2609" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1590">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timeSeries.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="25" selection-start="2574" selection-end="2574" vertical-scroll-proportion="0.6594779" vertical-offset="814" max-vertical-offset="1695">
           <folding />
         </state>
       </provider>

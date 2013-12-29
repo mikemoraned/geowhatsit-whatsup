@@ -20,6 +20,8 @@ regionFilePattern = /.+\/(\d+)\/regions$/
 
 positions = {}
 timeSeries = {}
+max = Number.MIN_VALUE
+min = Number.MAX_VALUE
 FS.listTree(argv.dir).then((entries) =>
   regionFileNames =
     _.filter(entries, (e) => regionFilePattern.test(e))
@@ -41,7 +43,7 @@ FS.listTree(argv.dir).then((entries) =>
   dispatchBatch = (index, batches) =>
     if index < batches.length
       batch = batches[index]
-      console.log("Doing batch #{index} of length #{batch.length}")
+      console.log("Doing batch #{index + 1}/#{batches.length} of length #{batch.length}")
       Q.all(reads(batch))
       .then(
         (filesRead) =>
@@ -52,9 +54,13 @@ FS.listTree(argv.dir).then((entries) =>
               for entry in fileRead.content
 #                console.dir(entry)
                 positions[entry.name] = entry.geo
-                if not timeSeries[entry.name]?
-                  timeSeries[entry.name] = {}
-                timeSeries[entry.name][fileRead.timestamp] = entry.summary.tweets
+                tweetsAtTimestamp = timeSeries[fileRead.timestamp]
+                if not tweetsAtTimestamp?
+                  tweetsAtTimestamp = timeSeries[fileRead.timestamp] = {}
+                tweets = entry.summary.tweets
+                tweetsAtTimestamp[entry.name] = tweets
+                min = Math.min(min, tweets)
+                max = Math.max(max, tweets)
           dispatchBatch(index + 1, batches)
         ,
         (error) =>
@@ -65,14 +71,27 @@ FS.listTree(argv.dir).then((entries) =>
 ).then(() =>
 #  console.dir(positions)
 #  console.dir(timeSeries)
-  out = for name, geo of positions
+  out =
     {
-      name: name
-      geo: geo
-      timeSeries: timeSeries[name]
+      range: {
+        min: min
+        max: max
+      }
+      data: for timestamp, tweetsAtTimestamp of timeSeries
+        {
+          timestamp: timestamp
+          snapshot: for name, tweets of tweetsAtTimestamp
+            {
+              name: name
+              geo: positions[name]
+              summary: {
+                tweets: tweets
+              }
+            }
+        }
     }
   FS.write(argv.out, JSON.stringify(out)).then(() =>
-    console.log("Write #{out.length} entries to #{argv.out}")
+    console.log("Wrote entries to #{argv.out}")
   )
 )
 .fail((error) =>

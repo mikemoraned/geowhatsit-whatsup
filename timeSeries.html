@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://bl.ocks.org/mbostock/raw/3757132/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<style>
+
+.graticule {
+  fill: none;
+  stroke: #777;
+  stroke-opacity: .5;
+  stroke-width: .5px;
+}
+
+.area {
+  stroke: #fff;
+  stroke-opacity: 0.3;
+  opacity: 0.9;
+  /*fill: #700;*/
+}
+
+.land {
+  fill: #222;
+}
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+</style>
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head><body>
+<script src="./index_files/d3.v3.min.js"></script>
+<script src="./index_files/topojson.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 960;
+
+var projection = d3.geo.mercator()
+    .scale((width + 1) / 2 / Math.PI)
+    .translate([width / 2, height / 2])
+    .precision(.1);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var graticule = d3.geo.graticule();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("path")
+    .datum(graticule)
+    .attr("class", "graticule")
+    .attr("d", path);
+
+d3.json("world-50m.json", function(error, world) {
+  svg.insert("path", ".graticule")
+      .datum(topojson.feature(world, world.objects.land))
+      .attr("class", "land")
+      .attr("d", path);
+
+  svg.insert("path", ".graticule")
+      .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+      .attr("class", "boundary")
+      .attr("d", path);
+
+  d3.json("timeSeries.json", function(error, timeSeries) {
+    console.dir(timeSeries);
+    var extent = [ timeSeries.range.min, timeSeries.range.max ];
+    var last = timeSeries.data[timeSeries.data.length - 1];
+    var regions = last.snapshot;
+
+//    var extent = d3.extent(regions, function(d) {return d.summary.tweets; });
+    console.dir(extent);
+    console.dir(regions);
+    var color = d3.scale.log().domain(extent).range(['white', 'red']);
+    var rectAttr = function(d) {
+        var topLeft = projection([d.geo.bbox.topLeft.longitude, d.geo.bbox.topLeft.latitude]);
+        var bottomRight = projection([d.geo.bbox.bottomRight.longitude, d.geo.bbox.bottomRight.latitude]);
+        return {
+            x: topLeft[0],
+            y: topLeft[1],
+            width: bottomRight[0] - topLeft[0],
+            height: bottomRight[1] - topLeft[1]
+        }
+    }
+    svg.selectAll(".point")
+            .data(regions)
+            .enter()
+            .append("a")
+//            .attr("xlink:href", function(d) { return base + d.ngrams.href; })
+            .append("rect")
+            .attr("class", "area")
+            .style("fill", function(d) { return color(d.summary.tweets); })
+            .attr("x", function(d) { return rectAttr(d).x; })
+            .attr("y", function(d) { return rectAttr(d).y; })
+            .attr("width", function(d) { return rectAttr(d).width; })
+            .attr("height", function(d) { return rectAttr(d).height; })
+            .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; });
+  });
+});
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
+</body></html>
