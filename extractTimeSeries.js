@@ -164,8 +164,10 @@
                 return e.name === entry.name;
               });
               diff = prevEntry[0] != null ? (prevCount = prevEntry[0].summary.tweets, latestCount - prevCount) : 0;
-              min = Math.min(min, diff);
-              max = Math.max(max, diff);
+              if (diff > 0) {
+                min = Math.min(min, diff);
+                max = Math.max(max, diff);
+              }
               _results1.push({
                 name: entry.name,
                 geo: entry.geo,

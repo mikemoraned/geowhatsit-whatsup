@@ -101,9 +101,6 @@ FS.listTree(argv.dir).then((entries) =>
     max = Number.MIN_VALUE
     min = Number.MAX_VALUE
     out.data = for pair in _.chain(out.data).zip(_.rest(out.data)).filter((p) => p[1]?).value()
-#      console.dir(pair[1])
-#      console.log(pair[1].timestamp)
-#      console.log("#{min}->#{max}")
       diffs = for entry in pair[1].snapshot
         latestCount = entry.summary.tweets
         prevEntry = _.filter(pair[0].snapshot, (e) => e.name == entry.name)
@@ -113,8 +110,9 @@ FS.listTree(argv.dir).then((entries) =>
         else
           0
         #        console.log("%s,%s,%s", prevCount, latestCount, diff)
-        min = Math.min(min, diff)
-        max = Math.max(max, diff)
+        if diff > 0
+          min = Math.min(min, diff)
+          max = Math.max(max, diff)
         {
           name: entry.name
           geo: entry.geo
