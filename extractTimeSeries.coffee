@@ -18,7 +18,7 @@ batchUp = partition(100)
 
 regionFilePattern = /.+\/(\d+)\/regions$/
 
-position = {}
+positions = {}
 timeSeries = {}
 FS.listTree(argv.dir).then((entries) =>
   regionFileNames =
@@ -51,7 +51,7 @@ FS.listTree(argv.dir).then((entries) =>
 #              console.log(fileRead.timestamp)
               for entry in fileRead.content
 #                console.dir(entry)
-                position[entry.name] = entry.geo
+                positions[entry.name] = entry.geo
                 if not timeSeries[entry.name]?
                   timeSeries[entry.name] = {}
                 timeSeries[entry.name][fileRead.timestamp] = entry.summary.tweets
@@ -63,6 +63,19 @@ FS.listTree(argv.dir).then((entries) =>
 
   dispatchBatch(0, batches)
 ).then(() =>
-  console.dir(position)
-  console.dir(timeSeries)
+#  console.dir(positions)
+#  console.dir(timeSeries)
+  out = for name, geo of positions
+    {
+      name: name
+      geo: geo
+      timeSeries: timeSeries[name]
+    }
+  FS.write(argv.out, JSON.stringify(out)).then(() =>
+    console.log("Write #{out.length} entries to #{argv.out}")
+  )
 )
+.fail((error) =>
+    console.error(error)
+)
+
