@@ -71,7 +71,7 @@ d3.json("world-50m.json", function(error, world) {
     var extent = [ timeSeries.range.min, timeSeries.range.max ];
 
     console.dir(extent);
-    var color = d3.scale.linear().domain(extent).range(['white', 'red']);
+    var color = d3.scale.log().domain(extent).range(['white', 'red']);
     var rectAttr = function(d) {
         var topLeft = projection([d.geo.bbox.topLeft.longitude, d.geo.bbox.topLeft.latitude]);
         var bottomRight = projection([d.geo.bbox.bottomRight.longitude, d.geo.bbox.bottomRight.latitude]);
@@ -84,9 +84,14 @@ d3.json("world-50m.json", function(error, world) {
     }
 
     var redraw = function(index) {
-        var regions = timeSeries.data[index].snapshot;
-        console.log("Redrawing regions: %s", regions.length);
-        var all = svg.selectAll(".point")
+        var data = timeSeries.data[index];
+        var date = new Date(parseInt(data.timestamp));
+        var regions = data.snapshot;
+        console.log("%s, %s: Redrawing regions: %s", index, date, regions.length);
+
+        svg.selectAll(".area").remove();
+
+        var all = svg.selectAll(".area")
                 .data(regions);
 
         all.enter()
@@ -99,14 +104,12 @@ d3.json("world-50m.json", function(error, world) {
             .attr("width", function(d) { return rectAttr(d).width; })
             .attr("height", function(d) { return rectAttr(d).height; })
             .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; });
-
-        all.exit().remove();
     };
 
     var index = 0;
     setInterval(function() {
         redraw(index);
-        index = (index + 1) % timeSeries.data.length;
+        index = (index + 10) % timeSeries.data.length;
     }, 100);
 
   });
