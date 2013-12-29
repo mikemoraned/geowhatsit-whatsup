@@ -96,7 +96,7 @@ d3.json("world-50m.json", function(error, world) {
             .attr("y", function(d) { return rectAttr(d).y; })
             .attr("width", function(d) { return rectAttr(d).width; })
             .attr("height", function(d) { return rectAttr(d).height; })
-            .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; })
+            .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; });
   });
 });
 
