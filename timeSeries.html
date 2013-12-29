@@ -71,7 +71,7 @@ d3.json("world-50m.json", function(error, world) {
     var extent = [ timeSeries.range.min, timeSeries.range.max ];
 
     console.dir(extent);
-    var color = d3.scale.log().domain(extent).range(['white', 'red']);
+    var color = d3.scale.linear().domain(extent).range(['white', 'red']);
     var rectAttr = function(d) {
         var topLeft = projection([d.geo.bbox.topLeft.longitude, d.geo.bbox.topLeft.latitude]);
         var bottomRight = projection([d.geo.bbox.bottomRight.longitude, d.geo.bbox.bottomRight.latitude]);
@@ -86,18 +86,21 @@ d3.json("world-50m.json", function(error, world) {
     var redraw = function(index) {
         var regions = timeSeries.data[index].snapshot;
         console.log("Redrawing regions: %s", regions.length);
-        svg.selectAll(".point")
-                .data(regions)
-                .enter()
-                .append("a")
-                .append("rect")
-                .attr("class", "area")
-                .style("fill", function(d) { return color(d.summary.tweets); })
-                .attr("x", function(d) { return rectAttr(d).x; })
-                .attr("y", function(d) { return rectAttr(d).y; })
-                .attr("width", function(d) { return rectAttr(d).width; })
-                .attr("height", function(d) { return rectAttr(d).height; })
-                .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; });
+        var all = svg.selectAll(".point")
+                .data(regions);
+
+        all.enter()
+            .append("a")
+            .append("rect")
+            .attr("class", "area")
+            .style("fill", function(d) { return color(d.summary.tweets); })
+            .attr("x", function(d) { return rectAttr(d).x; })
+            .attr("y", function(d) { return rectAttr(d).y; })
+            .attr("width", function(d) { return rectAttr(d).width; })
+            .attr("height", function(d) { return rectAttr(d).height; })
+            .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; });
+
+        all.exit().remove();
     };
 
     var index = 0;

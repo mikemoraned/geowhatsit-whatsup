@@ -3,13 +3,15 @@ Q = require("q")
 _ = require("underscore")._
 argv = require('optimist').argv
 
-USAGE = "USAGE: #{process.argv[0]} #{process.argv[1]} --dir <directory to process> --since <millis since epoch> --out <file to output time series in>"
+USAGE = "USAGE: #{argv.$0} --dir <directory to process> --since <millis since epoch> [--show-differences]--out <file to output time series in>"
 
 if not (argv.dir? and argv.out and argv.since)
   console.error(USAGE)
   process.exit(1)
 
 since = parseInt(argv.since)
+
+console.dir(argv)
 
 partition = (partitionSize) ->
   (list) ->
@@ -93,6 +95,42 @@ FS.listTree(argv.dir).then((entries) =>
             }
         }
     }
+
+  if (argv['show-differences'])
+    console.log("Finding differences over time")
+    max = Number.MIN_VALUE
+    min = Number.MAX_VALUE
+    out.data = for pair in _.chain(out.data).zip(_.rest(out.data)).filter((p) => p[1]?).value()
+#      console.dir(pair[1])
+#      console.log(pair[1].timestamp)
+#      console.log("#{min}->#{max}")
+      diffs = for entry in pair[1].snapshot
+        latestCount = entry.summary.tweets
+        prevEntry = _.filter(pair[0].snapshot, (e) => e.name == entry.name)
+        diff = if prevEntry[0]?
+          prevCount = prevEntry[0].summary.tweets
+          latestCount - prevCount
+        else
+          0
+        #        console.log("%s,%s,%s", prevCount, latestCount, diff)
+        min = Math.min(min, diff)
+        max = Math.max(max, diff)
+        {
+          name: entry.name
+          geo: entry.geo
+          summary: {
+            tweets: diff
+          }
+        }
+      {
+        timestamp: pair[1].timestamp
+        snapshot: _.filter(diffs, (d) => d.summary.tweets > 0)
+      }
+    out.range = {
+      min: min
+      max: max
+    }
+
   FS.write(argv.out, JSON.stringify(out)).then(() =>
     console.log("Wrote entries to #{argv.out}")
   )

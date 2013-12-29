@@ -11,7 +11,7 @@
 
   argv = require('optimist').argv;
 
-  USAGE = "USAGE: " + process.argv[0] + " " + process.argv[1] + " --dir <directory to process> --since <millis since epoch> --out <file to output time series in>";
+  USAGE = "USAGE: " + argv.$0 + " --dir <directory to process> --since <millis since epoch> [--show-differences]--out <file to output time series in>";
 
   if (!((argv.dir != null) && argv.out && argv.since)) {
     console.error(USAGE);
@@ -19,6 +19,8 @@
   }
 
   since = parseInt(argv.since);
+
+  console.dir(argv);
 
   partition = function(partitionSize) {
     return function(list) {
@@ -104,7 +106,7 @@
     };
     return dispatchBatch(0, batches);
   }).then(function() {
-    var name, out, timestamp, tweets, tweetsAtTimestamp;
+    var diff, diffs, entry, latestCount, name, out, pair, prevCount, prevEntry, timestamp, tweets, tweetsAtTimestamp;
     out = {
       range: {
         min: min,
@@ -137,6 +139,57 @@
         return _results;
       })()
     };
+    if (argv['show-differences']) {
+      console.log("Finding differences over time");
+      max = Number.MIN_VALUE;
+      min = Number.MAX_VALUE;
+      out.data = (function() {
+        var _i, _len, _ref, _results,
+          _this = this;
+        _ref = _.chain(out.data).zip(_.rest(out.data)).filter(function(p) {
+          return p[1] != null;
+        }).value();
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          pair = _ref[_i];
+          diffs = (function() {
+            var _j, _len1, _ref1, _results1,
+              _this = this;
+            _ref1 = pair[1].snapshot;
+            _results1 = [];
+            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+              entry = _ref1[_j];
+              latestCount = entry.summary.tweets;
+              prevEntry = _.filter(pair[0].snapshot, function(e) {
+                return e.name === entry.name;
+              });
+              diff = prevEntry[0] != null ? (prevCount = prevEntry[0].summary.tweets, latestCount - prevCount) : 0;
+              min = Math.min(min, diff);
+              max = Math.max(max, diff);
+              _results1.push({
+                name: entry.name,
+                geo: entry.geo,
+                summary: {
+                  tweets: diff
+                }
+              });
+            }
+            return _results1;
+          }).call(this);
+          _results.push({
+            timestamp: pair[1].timestamp,
+            snapshot: _.filter(diffs, function(d) {
+              return d.summary.tweets > 0;
+            })
+          });
+        }
+        return _results;
+      }).call(_this);
+      out.range = {
+        min: min,
+        max: max
+      };
+    }
     return FS.write(argv.out, JSON.stringify(out)).then(function() {
       return console.log("Wrote entries to " + argv.out);
     });
