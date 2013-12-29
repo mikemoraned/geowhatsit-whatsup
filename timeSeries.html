@@ -69,12 +69,8 @@ d3.json("world-50m.json", function(error, world) {
   d3.json("timeSeries.json", function(error, timeSeries) {
     console.dir(timeSeries);
     var extent = [ timeSeries.range.min, timeSeries.range.max ];
-    var last = timeSeries.data[timeSeries.data.length - 1];
-    var regions = last.snapshot;
 
-//    var extent = d3.extent(regions, function(d) {return d.summary.tweets; });
     console.dir(extent);
-    console.dir(regions);
     var color = d3.scale.log().domain(extent).range(['white', 'red']);
     var rectAttr = function(d) {
         var topLeft = projection([d.geo.bbox.topLeft.longitude, d.geo.bbox.topLeft.latitude]);
@@ -86,19 +82,30 @@ d3.json("world-50m.json", function(error, world) {
             height: bottomRight[1] - topLeft[1]
         }
     }
-    svg.selectAll(".point")
-            .data(regions)
-            .enter()
-            .append("a")
-//            .attr("xlink:href", function(d) { return base + d.ngrams.href; })
-            .append("rect")
-            .attr("class", "area")
-            .style("fill", function(d) { return color(d.summary.tweets); })
-            .attr("x", function(d) { return rectAttr(d).x; })
-            .attr("y", function(d) { return rectAttr(d).y; })
-            .attr("width", function(d) { return rectAttr(d).width; })
-            .attr("height", function(d) { return rectAttr(d).height; })
-            .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; });
+
+    var redraw = function(index) {
+        var regions = timeSeries.data[index].snapshot;
+        console.log("Redrawing regions: %s", regions.length);
+        svg.selectAll(".point")
+                .data(regions)
+                .enter()
+                .append("a")
+                .append("rect")
+                .attr("class", "area")
+                .style("fill", function(d) { return color(d.summary.tweets); })
+                .attr("x", function(d) { return rectAttr(d).x; })
+                .attr("y", function(d) { return rectAttr(d).y; })
+                .attr("width", function(d) { return rectAttr(d).width; })
+                .attr("height", function(d) { return rectAttr(d).height; })
+                .append("title").text(function(d) { return d.name + ": " + d.summary.tweets + " tweets"; });
+    };
+
+    var index = 0;
+    setInterval(function() {
+        redraw(index);
+        index = (index + 1) % timeSeries.data.length;
+    }, 100);
+
   });
 });
 

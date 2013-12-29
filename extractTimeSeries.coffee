@@ -3,11 +3,13 @@ Q = require("q")
 _ = require("underscore")._
 argv = require('optimist').argv
 
-USAGE = "USAGE: #{process.argv[0]} #{process.argv[1]} --dir <directory to process> --out <file to output time series in>"
+USAGE = "USAGE: #{process.argv[0]} #{process.argv[1]} --dir <directory to process> --since <millis since epoch> --out <file to output time series in>"
 
-if not (argv.dir? and argv.out)
+if not (argv.dir? and argv.out and argv.since)
   console.error(USAGE)
   process.exit(1)
+
+since = parseInt(argv.since)
 
 partition = (partitionSize) ->
   (list) ->
@@ -53,14 +55,15 @@ FS.listTree(argv.dir).then((entries) =>
 #              console.log(fileRead.timestamp)
               for entry in fileRead.content
 #                console.dir(entry)
-                positions[entry.name] = entry.geo
-                tweetsAtTimestamp = timeSeries[fileRead.timestamp]
-                if not tweetsAtTimestamp?
-                  tweetsAtTimestamp = timeSeries[fileRead.timestamp] = {}
-                tweets = entry.summary.tweets
-                tweetsAtTimestamp[entry.name] = tweets
-                min = Math.min(min, tweets)
-                max = Math.max(max, tweets)
+                if fileRead.timestamp >= since
+                  positions[entry.name] = entry.geo
+                  tweetsAtTimestamp = timeSeries[fileRead.timestamp]
+                  if not tweetsAtTimestamp?
+                    tweetsAtTimestamp = timeSeries[fileRead.timestamp] = {}
+                  tweets = entry.summary.tweets
+                  tweetsAtTimestamp[entry.name] = tweets
+                  min = Math.min(min, tweets)
+                  max = Math.max(max, tweets)
           dispatchBatch(index + 1, batches)
         ,
         (error) =>
