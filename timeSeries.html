@@ -67,7 +67,10 @@ d3.json("world-50m.json", function(error, world) {
       .attr("d", path);
 
 //  var timeSeries = "timeSeries.json";
-  var timeSeries = "timeSeries.diff.json";
+//  var timeSeries = "timeSeries.diff.json";
+  var timeSeries = window.location.hash.substring(1, window.location.hash.length);
+
+  console.log("Using series: %s", timeSeries);
 
   d3.json(timeSeries, function(error, timeSeries) {
     console.dir(timeSeries);
